@@ -5,8 +5,6 @@ const ejs = require('ejs')
 app.set("view engine", "ejs")
 
  app.get("/",(req,res)=>{
-  //   console.log("Request Made")
-  //  console.log(__dirname)
    res.render("index")
  })
 
@@ -29,15 +27,3 @@ app.set("view engine", "ejs")
  app.get("/SignIn",(req,res)=>{
   res.render("SignIn")
  })
- app.post("/vicky", (req, res) => {
-  res.render("index")
-  const username = req.body.username;
-  const password = req.body.password;
-
-  // Authenticate the user's credentials
-  if (username === "vicky" && password === "password") {
-    res.send("Login successful!");
-  } else {
-    res.send("Invalid username or password.");
-  }
-});
