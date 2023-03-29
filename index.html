@@ -1,13 +1,86 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Contact Form</title>
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ecommerce Landing Page</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 </head>
 <body>
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="#">Ecommerce</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="#">Shop</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
 
+  <main>
+    <div class="container my-5">
+      <div class="row">
+        <div class="col-md-6">
+          <h1 class="mb-3">Welcome to Ecommerce</h1>
+          <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, metus at accumsan suscipit, mi magna fringilla justo, vel suscipit ex turpis ut libero.</p>
+          <a href="#" class="btn btn-primary btn-lg">Shop Now</a>
+        </div>
+        <div class="col-md-6">
+          <img src="https://via.placeholder.com/500x300" alt="Product Image" class="img-fluid">
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <main>
+    <section class="product-section">
+      <div class="container my-5">
+        <div class="row">
+          <div class="col-md-6">
+            <img src="data:image/jpeg;base64,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kEQa3U6F05UA7rcxmf2HEKGq+ijT831Zmj89pHyC31EHKKvoXoH56irA+8xQlX0JVABMEsT/AA3YXckQecazodvMWdlO547NhB+RULV9Gd7gzminH/TK9UIg8gVOj7pT53U0oxz9Uq/aL5c9LtdBNSxVNG8nMNQzIaT2tP2SvWro43fSY13mMrHmtlBOMTUVO/70QKDylVayeIJIrTb4Lf1hJe9jt7j5cBhay2N78YacL2LNpPTs31tjt7/Onb+Sx3aG0q7/ACGgH3YgPkg8lNo+HHmqxRDtBXq46B0of8kpvZuH4qn+z3Sf/JKf+Z35oPKoox2c/JVCjz9nj5L1UNAaUH+SU3vd+auM0Ppdhy2xUOfGIH5oPKfoXDiCFW22vk4Bjj4L1pDpmxQ/VWehZ5QN/JZsVvooR/dUcDPuxgIPJNPpitnI6qhqH/djJWzWLRmpqeUSUFprYnE8HmIt+JXphrWtGGgAdwX1BymyWLXrMdZOacfxZwfgMrodkp7nTwkXSrjqH44bGYx7e1SWF9QEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERB//2Q==" alt="Product Image" class="img-fluid">
+          </div>
+          <div class="col-md-6">
+            <h1 class="mb-3">2019 Audi R8</h1>
+            <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, metus at accumsan suscipit, mi magna fringilla justo, vel suscipit ex turpis ut libero.</p>
+            <h2 class="mb-3">$200,000</h2>
+            <a href="#" class="btn btn-primary btn-lg mb-3">Add to Cart</a>
+            <ul class="list-unstyled">
+              <li><strong>Make:</strong> Audi</li>
+              <li><strong>Model:</strong> R8</li>
+              <li><strong>Year:</strong> 2019</li>
+              <li><strong>Color:</strong> Black</li>
+              <li><strong>Mileage:</strong> 5,000</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-light text-center py-3">
+    <p>Copyright &copy; 2023 Ecommerce</p>
+  </footer>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
      <!-- Bootstrap js -->
+     <script>      
+ var NAme  = "DevVicky"
+ console.log(NAme)
+     </script>
     <script src="https://code.jquery.com/jquery-3.5..slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@.16.0/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>

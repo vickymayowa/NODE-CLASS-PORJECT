@@ -4,7 +4,7 @@ const app = express();
 const ejs = require('ejs') 
 app.set("view engine", "ejs")
 
- app.get("/",(req,res)=>{
+ app.get("/",(req, res)=>{
    res.render("index")
  })
 
@@ -27,3 +27,9 @@ app.set("view engine", "ejs")
  app.get("/SignIn",(req,res)=>{
   res.render("SignIn")
  })
+ app.post("/SiginOut",(req,res)=>{
+  res.render("SiginOut")
+ })
+
+ var NAme  = "DevVicky"
+ console.log(NAme)
