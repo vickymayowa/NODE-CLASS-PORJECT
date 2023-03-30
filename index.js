@@ -1,12 +1,15 @@
 const {req,res} = require('express');
 const express = require('express')
 const app = express();
-const ejs = require('ejs') 
+const ejs = require('ejs'); 
+const bodyParser = require('body-parser');
 app.set("view engine", "ejs")
 
  app.get("/",(req, res)=>{
    res.render("index")
  })
+
+ app.use(bodyParser.urlencoded({extended: true}))
 
  app.listen(5000,()=>{
     console.log("Server About to Start")
@@ -29,7 +32,5 @@ app.set("view engine", "ejs")
  })
  app.post("/SiginOut",(req,res)=>{
   res.render("SiginOut")
+  console.log(req.body)
  })
-
- var NAme  = "DevVicky"
- console.log(NAme)
