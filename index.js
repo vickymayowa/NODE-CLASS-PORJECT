@@ -13,10 +13,7 @@ app.set("view engine", "ejs")
 
  app.listen(5000,()=>{
     console.log("Server About to Start")
-    console.log("Lift 1")
-    console.log("Lift 2")
-    console.log("Lift 3")
-    console.log("Lift 4")
+    console.log("Lift 1,2,3,4,5,6,WE MOVE")
     console.log("Go live now")
     console.log("Your server is live Now")
  })
