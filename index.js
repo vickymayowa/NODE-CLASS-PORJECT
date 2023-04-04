@@ -15,6 +15,13 @@ mongoose.connect(URI)
   console.log(err);
 })
 
+let userSchema = {
+    FirstName:{type:String, required:true},
+    LastName:{type:String, required:true},
+    Email:{type:String, required:true,unique:true},
+    Password:{type:String, required:true},
+}
+let userModel = mongoose.model("Users_Collection", userSchema)
 
 app.set("view engine", "ejs")
 
