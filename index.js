@@ -4,7 +4,7 @@ const express = require('express')
 const app = express();
 const ejs = require('ejs'); 
 const bodyParser = require('body-parser');
-const URI = "mongodb+srv://favouradebanjo603oluyomiadebanjocluster0.ae47tji.mongodb.net/nodeclass_db?retryWrites=true&w=majority"
+const URI = "mongodb+srv://favouradebanjo603:oluyomiadebanjo@cluster0.ae47tji.mongodb.net/nodeclass_db?retryWrites=true&w=majority"
 mongoose.connect(URI)
 .then(()=>{
   console.log("Mongoose HandShake Approved");
@@ -16,11 +16,13 @@ mongoose.connect(URI)
 })
 
 let userSchema = {
-  firstname:String,
-  lastname:String,
-  email:String,
-  password:String
+  firstname:{type:String, required:true},
+  lastname:{type:String, required:true},
+  email:{type:String, required:true,unique:true},
+  password:{type:String, required:true},
 }
+
+
 let userModel = mongoose.model("Users_Collection", userSchema)
 app.set("view engine", "ejs")
 
