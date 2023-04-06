@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>Sign IN Page</title>
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="row rounded-5 rounded mx-auto justify-content-center px-4">
+            <div class="col-md-6  shadow shadow-lg border-2 border rounded my-5">
+                <h2 class="text-center mt-3  mb-4 fw-lighter text-muted">lOGIN</h2>
+                <form action="/SignIN" method="POST">
+                    <div class="text-muted fw-bold">
+                        <div class="form-group mt-3">
+                            <label for="email">UserName</label>
+                        <input type="text"  id="UserName" class="form-control required">
+                        <div class="form-group mt-3">
+                            <label for="email">Password</label>
+                        <input type="password"  id="Password" class="form-control required visually-hidden">
+                    </div>
+                </div>
+                <div class="button-form">
+                    <button class="btn btn-outline-dark col-lg-12 col-sm-6 my-4" id="Login">lOGIN</button>
+                </div>
+            </div>
+        </div>
+</body>
+</html>

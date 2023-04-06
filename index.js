@@ -52,12 +52,18 @@ app.set("view engine", "ejs")
   console.log(req.body);
     let form = new userModel(req.body)
     form.save()
-    .then(()=>{
+    .then((response)=>{
         console.log("database ti gba wole")
-        res.render("SiginOut",{message:"Sign up successful"})
+       console.log(response)
     })
     .catch((err)=>{
         console.log(err);
+        if(err.code === 11000){
+          console.log(err.code);
+          res.render("signup",{message:"Email Already Exist"})
+        } else {
+          res.render("SiginOut", {message:"Please Fill in all Fields"})
+        }
         res.render("SiginOut",{message:"Failed to submit"})
     })
 })
