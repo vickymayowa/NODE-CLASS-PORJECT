@@ -5,11 +5,10 @@ const app = express();
 const ejs = require('ejs'); 
 const bodyParser = require('body-parser');
 const URI = "mongodb+srv://favouradebanjo603oluyomiadebanjocluster0.ae47tji.mongodb.net/nodeclass_db?retryWrites=true&w=majority"
-
 mongoose.connect(URI)
 .then(()=>{
   console.log("Mongoose HandShake Approved");
-  console.log("Mongoose HandShake Connected");
+  console.log("Mongoose Activated Connected");
 })
 .catch((err)=>{
   console.log("Mongoose Handshake Disconnected");
@@ -23,7 +22,6 @@ let userSchema = {
   password:String
 }
 let userModel = mongoose.model("Users_Collection", userSchema)
-
 app.set("view engine", "ejs")
 
  app.get("/",(req, res)=>{
@@ -49,17 +47,15 @@ app.set("view engine", "ejs")
   res.render("SignIn")
  })
  app.post("/SiginOut",(req,res)=>{
-  res.render("SiginOut")
-  let form = new userModel()
-  form.save()
-  .then(()=>{
-    console.log("Database approved details");
-    res.render("SiginOut",{message: "Sign up details successful"})
-  })
-  .catch((err)=>{
-    console.log("Database Rejected Details")
-    console.log(err)
-    res.render("SiginOut",{message: "Failed to submit"})
-  })
-  console.log(req.body)
- })
+  console.log(req.body);
+    let form = new userModel(req.body)
+    form.save()
+    .then(()=>{
+        console.log("database ti gba wole")
+        res.render("SiginOut",{message:"Sign up successful"})
+    })
+    .catch((err)=>{
+        console.log(err);
+        res.render("SiginOut",{message:"Failed to submit"})
+    })
+})
