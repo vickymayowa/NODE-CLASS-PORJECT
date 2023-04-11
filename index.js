@@ -58,3 +58,4 @@ app.get("/signin",(req,res)=>{
 app.get("/dash",(req,res)=>{
     res.render("dashboard")
 })
+console.log("hello world")
