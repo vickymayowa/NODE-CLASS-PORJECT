@@ -5,6 +5,7 @@ const app = express();
 const ejs = require('ejs'); 
 const bodyParser = require('body-parser');
 const URI = "mongodb+srv://favouradebanjo603:oluyomiadebanjo@cluster0.ae47tji.mongodb.net/nodeclass_db?retryWrites=true&w=majority"
+
 mongoose.connect(URI)
 .then(()=>{
   console.log("Mongoose HandShake Approved");
@@ -49,21 +50,47 @@ app.set("view engine", "ejs")
   res.render("SignIn")
  })
  app.post("/SiginOut",(req,res)=>{
-  console.log(req.body);
+    console.log(req.body);
     let form = new userModel(req.body)
+    console.log(form);
     form.save()
     .then((response)=>{
-        console.log("database ti gba wole")
-       console.log(response)
+        console.log("successfully saved");
+        // console.log(response)
+        res.redirect("/signin")
     })
     .catch((err)=>{
         console.log(err);
-        if(err.code === 11000){
-          console.log(err.code);
-          res.render("signup",{message:"Email Already Exist"})
+        if (err.code === 11000) {
+            console.log(err.code);
+            res.render("signup",{message:"Email already exist"})
         } else {
-          res.render("SiginOut", {message:"Please Fill in all Fields"})
+            res.render("signup", {message:"Please fill in all fields"})
         }
-        res.render("SiginOut",{message:"Failed to submit"})
     })
+})
+
+app.post("/signup",(req,res)=>{
+  console.log(req.body);
+  let form = new userModel(req.body)
+  console.log(form);
+  form.save()
+  .then((res)=>{
+      console.log("successfully saved");
+      // console.log(response)
+      res.redirect("/signin")
+  })
+  .catch((err)=>{
+      console.log(err);
+      if (err.code === 11000) {
+          console.log(err.code);
+          res.render("signup",{message:"Email already exist"})
+      } else {
+          res.render("signup", {message:"Please fill in all fields"})
+      }
+  })
+})
+
+app.post("/signin",(req,res)=>{
+  
 })
